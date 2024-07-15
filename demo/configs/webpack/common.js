@@ -14,6 +14,8 @@ module.exports = {
   entry: "./src/index.tsx",
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
+    // https://stackoverflow.com/questions/72410912/webpack-5-breaking-changes-process-browser
+    fallback: { 'process/browser': require.resolve('process/browser')}
   },
   output: {
     path: resolve(__dirname, "dist"),
