@@ -4,6 +4,17 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
+import os
+import sys
+
+print('当前工作路径: ', os.getcwd())
+print('导包路径为: ')
+
+sys.path.insert(0,os.getcwd()) # 把当前路径添加到 sys.path 中
+
+for p in sys.path:
+    print(p)
+    
 import cv2  # type: ignore
 
 from segment_anything import SamAutomaticMaskGenerator, sam_model_registry
